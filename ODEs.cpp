@@ -5,25 +5,12 @@ using namespace std;
 
 void integral ();
 /*decaro funcion*/
-float func(float w, float y) 
-{ 
-    return (-w*y); 
-}
+float func(float w, float y);
+
 
 /* declaro euler*/
 
-void euler(float x, float y, float h, float x_0) 
-{ 
-    float t= 0; 
-  
-    while (x_0 < x) { 
-        t = y; 
-        y = y + h * func(x_0, y); 
-        x_0 = x_0 + h; 
-    } 
-  
-    cout << y << endl; 
-}
+void euler(float x, float y, float h, float x_0);
 
 int main(){
     
@@ -44,6 +31,21 @@ int main(){
     return 0;
 }
 
-void integral (){
-    
+float func(float w, float y) 
+{ 
+    return (-w*y); 
 }
+
+void euler(float x, float y, float h, float x_0) 
+{ 
+    float t= 0; 
+  
+    while (x_0 < x) { 
+        t = y; 
+        y = y + h * func(x_0, y); 
+        x_0 = x_0 + h; 
+    } 
+  
+    cout << y << endl; 
+}
+
